@@ -2,7 +2,7 @@
 An implementation of the paper: RVS-VoteNet: Revisiting VoteNet with Inner-group Relation and Weighted Relation-Aware Proposal
 
 In this work, we revisit and dive
-deeper into VoteNet, one of the most influential yet underfully-explored 3D object detection networks, and develop a
+deeper into VoteNet, one of the most influential yet under fully-explored 3D object detection networks, and develop a
 more accurate 3D detection model in cluttered indoor scenes.
 Specifically, we rethink point cloud feature extraction, Hough
 voting and proposal generation in VoteNet, finding that each
