@@ -96,3 +96,31 @@ cd RVS-VoteNet/mmdetection3d
 ```shell
 pip install -v -e .  # or "python setup.py develop"
 ```
+
+### Getting Started
+
+Please see [getting_started.md](docs/getting_started.md) for basic usage examples.
+We follow the `mmdetection3d` data preparation protocol described in [scannet](data/scannet), [sunrgbd](data/sunrgbd), and [s3dis](data/s3dis).
+The only difference is that we [do not sample](tools/data_converter/sunrgbd_data_utils.py#L143) 50,000 points from each point cloud in `SUN RGB-D`, using all points.
+
+**Training**
+
+To start training, run [slurm_train](tools/slurm_train.sh) with `rvs_votenet` [configs](mmdetection3d/configs/rvs_votenet):
+```shell
+cd mmdetection3d
+bash tools/slurm_train.sh configs/rvs_votenet/rvs-votenet_16x8_sunrgbd-3d-10class.py --work_dir
+```
+
+**Testing**
+
+Test pre-trained model using [slurm_test](tools/slurm_test.sh) with `rvs_votenet` [configs](mmdetection3d/configs/rvs_votenet):
+```shell
+bash tools/slurm_test.sh configs/rvs_votenet/rvs-votenet_16x8_sunrgbd-3d-10class.py \
+    work_dirs/rvs_votenet_sunrgbd-3d-10class/latest.pth --work_dir --eval mAP
+```
+
+### Models
+
+
+
+
